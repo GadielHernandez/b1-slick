@@ -1,0 +1,7 @@
+# Source TypeScript (se publica src/b1/ separado via "files" en package.json)
+# Excluir todo excepto lo declarado en "files"
+
+node_modules/
+dist/test-resources/
+*.log
+.DS_Store

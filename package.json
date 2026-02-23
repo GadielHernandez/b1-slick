@@ -1,0 +1,41 @@
+{
+    "name": "b1-slick",
+    "version": "0.1.0",
+    "description": "Slick — Smart SAPUI5 controls for SAP Business One",
+    "keywords": [
+        "sapui5",
+        "sap-b1",
+        "service-layer",
+        "slick",
+        "smart-controls",
+        "mdc"
+    ],
+    "license": "MIT",
+    "main": "dist/resources/b1/slick/library.js",
+    "types": "dist/resources/b1/slick/index.d.ts",
+    "files": [
+        "dist/resources/",
+        "src/b1/"
+    ],
+    "ui5": {
+        "paths": {
+            "src": "src/"
+        }
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "ui5 build",
+        "ts-typecheck": "tsc --noEmit",
+        "ts-interface-generator": "npx @ui5/ts-interface-generator"
+    },
+    "devDependencies": {
+        "@openui5/types": "1.120.27",
+        "@sapui5/types": "1.120.27",
+        "@ui5/cli": "^4.0.26",
+        "@ui5/ts-interface-generator": "^0.10.4",
+        "typescript": "^5.9.3",
+        "ui5-tooling-transpile": "^3.10.1"
+    }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>b1.slick</name>
+    <vendor>GitHub</vendor>
+    <copyright>MIT</copyright>
+    <version>0.1.0</version>
+    <documentation>Slick – Smart SAPUI5 controls for SAP Business One Service Layer</documentation>
+    <dependencies>
+        <dependency>
+            <libraryName>sap.ui.core</libraryName>
+        </dependency>
+        <dependency>
+            <libraryName>sap.ui.mdc</libraryName>
+        </dependency>
+        <dependency>
+            <libraryName>sap.m</libraryName>
+        </dependency>
+    </dependencies>
+    <appData>
+        <packaging xmlns="http://www.sap.com/ui5/buildext/packaging" version="2.0">
+            <module-infos>
+                <raw-module name="b1/slick/library"/>
+            </module-infos>
+            <all-in-one>
+                <exclude name="b1/slick/"/>
+            </all-in-one>
+        </packaging>
+    </appData>
+</library>

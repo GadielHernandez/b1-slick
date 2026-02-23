@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "AMD",
+        "strict": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": false,
+        "skipLibCheck": true,
+        "types": ["@sapui5/types"],
+        "baseUrl": "./src",
+        "paths": {
+            "b1/*": ["./b1/*"]
+        }
+    },
+    "include": ["src/**/*.ts"]
+}
