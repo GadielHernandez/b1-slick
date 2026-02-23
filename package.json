@@ -11,6 +11,10 @@
         "mdc"
     ],
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/GadielHernandez/b1-slick.git"
+    },
     "main": "dist/resources/b1/slick/library.js",
     "types": "dist/resources/b1/slick/index.d.ts",
     "files": [
