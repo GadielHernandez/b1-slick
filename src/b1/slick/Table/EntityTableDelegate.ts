@@ -61,7 +61,8 @@ EntityTableDelegate.getFilters = (table) => {
     const filterId = table.getFilter();
     if (!filterId) return [];
 
-    const filter = Element.getElementById(filterId) as FilterBar;
+    const filter = Element.getElementById(filterId) as FilterBar | null;
+    if (!filter) return [];
     const searchValue = filter.getSearch();
     if (!searchValue) return [];
 

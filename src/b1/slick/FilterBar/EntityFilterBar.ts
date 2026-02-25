@@ -11,7 +11,16 @@ import FilterOperator from "sap/ui/model/FilterOperator";
 const DELEGATE_PATH = "b1/slick/FilterBar/EntityFilterBarDelegate";
 
 /**
+ * A wrapper control that renders an MDC `FilterBar` automatically populated
+ * with filter fields derived from entity metadata registered in `Slick`.
+ *
+ * Fires a `search` event with the resolved `Filter[]` array ready to be passed
+ * to an OData binding. Set `entity` to activate.
+ *
  * @namespace b1.slick.FilterBar.EntityFilterBar
+ * @example
+ * <!-- XML view usage: -->
+ * <slick:EntityFilterBar entity="BusinessPartners" search=".onSearch" />
  */
 export default class EntityFilterBar extends Control {
     constructor(idOrSettings?: string | $EntityFilterBarSettings);
@@ -22,6 +31,7 @@ export default class EntityFilterBar extends Control {
 
     static readonly metadata: MetadataOptions = {
         properties: {
+            /** Name of the registered entity. Setting this property creates the inner FilterBar. */
             entity: { type: "string" },
         },
         aggregations: {
@@ -31,6 +41,10 @@ export default class EntityFilterBar extends Control {
             },
         },
         events: {
+            /**
+             * Fired when the user triggers a search. The event parameter `filters` contains
+             * an array of `sap.ui.model.Filter` objects ready for OData binding.
+             */
             search: { parameters: { filters: "sap.ui.model.Filter[]" } },
         },
     };

@@ -5,11 +5,14 @@ import { DataTypes } from "b1/slick/registry/types";
 
 export default class AutoDataType {
     static attach(field: FieldBase): void {
+        let configured = false;
         field.attachModelContextChange(() => {
+            if (configured) return;
             const entity = field.getProperty("entity") as string;
             const propertyKey = field.getProperty("propertyKey") as string;
             if (!entity || !propertyKey) return;
 
+            configured = true;
             this.configField(field);
         });
     }

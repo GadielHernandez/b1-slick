@@ -10,12 +10,13 @@ EnumsValueHelpDelegate.getFilters = (
     _valueHelp: unknown,
     content: unknown
 ) => {
-    const filterContent = content as { getSearch: () => string };
+    const search = (content as { getSearch: () => string }).getSearch();
+    if (!search) return [];
     return [
         new Filter({
             path: "value",
             operator: FilterOperator.Contains,
-            value1: filterContent.getSearch(),
+            value1: search,
         }),
     ];
 };

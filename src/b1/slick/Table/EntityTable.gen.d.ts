@@ -8,6 +8,12 @@ declare module "./EntityTable" {
      * Interface defining the settings object used in constructor calls
      */
     interface $EntityTableSettings extends $ControlSettings {
+
+        /**
+         * Table configuration object.
+        - `entity` (required): registered entity name (e.g. `"BusinessPartners"`)
+        - `initialColumns` (optional): property keys to show as columns on first load
+         */
         config?: object | PropertyBindingInfo | `{${string}}`;
         table?: Table;
     }
@@ -17,42 +23,22 @@ declare module "./EntityTable" {
         // property: config
 
         /**
-         * Gets current value of property "config".
-         *
-         * @returns Value of property "config"
+         * Table configuration object.
+        - `entity` (required): registered entity name (e.g. `"BusinessPartners"`)
+        - `initialColumns` (optional): property keys to show as columns on first load
          */
         getConfig(): object;
 
         /**
-         * Sets a new value for property "config".
-         *
-         * When called with a value of "null" or "undefined", the default value of the property will be restored.
-         *
-         * @param config New value for property "config"
-         * @returns Reference to "this" in order to allow method chaining
+         * Table configuration object.
+        - `entity` (required): registered entity name (e.g. `"BusinessPartners"`)
+        - `initialColumns` (optional): property keys to show as columns on first load
          */
         setConfig(config: object): this;
 
         // aggregation: table
-
-        /**
-         * Gets content of aggregation "table".
-         */
         getTable(): Table;
-
-        /**
-         * Sets the aggregated table.
-         *
-         * @param table The table to set
-         * @returns Reference to "this" in order to allow method chaining
-         */
         setTable(table: Table): this;
-
-        /**
-         * Destroys the table in the aggregation "table".
-         *
-         * @returns Reference to "this" in order to allow method chaining
-         */
         destroyTable(): this;
     }
 }

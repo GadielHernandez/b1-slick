@@ -48,6 +48,7 @@ class EntityTableDialog extends MDCTable {
     }
 
     createContent() {
+        this.addFilterBar();
         this.createTable();
     }
 

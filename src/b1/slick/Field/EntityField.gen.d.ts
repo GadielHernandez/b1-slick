@@ -7,7 +7,15 @@ declare module "./EntityField" {
      * Interface defining the settings object used in constructor calls
      */
     interface $EntityFieldSettings extends $FieldSettings {
+
+        /**
+         * Name of the registered entity (e.g. `"BusinessPartners"`).
+         */
         entity?: string | PropertyBindingInfo;
+
+        /**
+         * Property key within the entity (e.g. `"CardCode"`). Determines the data type and value help.
+         */
         propertyKey?: string | PropertyBindingInfo;
     }
 
@@ -16,38 +24,24 @@ declare module "./EntityField" {
         // property: entity
 
         /**
-         * Gets current value of property "entity".
-         *
-         * @returns Value of property "entity"
+         * Name of the registered entity (e.g. `"BusinessPartners"`).
          */
         getEntity(): string;
 
         /**
-         * Sets a new value for property "entity".
-         *
-         * When called with a value of "null" or "undefined", the default value of the property will be restored.
-         *
-         * @param entity New value for property "entity"
-         * @returns Reference to "this" in order to allow method chaining
+         * Name of the registered entity (e.g. `"BusinessPartners"`).
          */
         setEntity(entity: string): this;
 
         // property: propertyKey
 
         /**
-         * Gets current value of property "propertyKey".
-         *
-         * @returns Value of property "propertyKey"
+         * Property key within the entity (e.g. `"CardCode"`). Determines the data type and value help.
          */
         getPropertyKey(): string;
 
         /**
-         * Sets a new value for property "propertyKey".
-         *
-         * When called with a value of "null" or "undefined", the default value of the property will be restored.
-         *
-         * @param propertyKey New value for property "propertyKey"
-         * @returns Reference to "this" in order to allow method chaining
+         * Property key within the entity (e.g. `"CardCode"`). Determines the data type and value help.
          */
         setPropertyKey(propertyKey: string): this;
     }

@@ -16,7 +16,16 @@ type ConfigTable = {
 const PATH_DELEGATE = "b1/slick/Table/EntityTableDelegate";
 
 /**
+ * A wrapper control that renders a responsive MDC `Table` automatically configured
+ * from entity metadata registered in `Slick`. Handles column creation, OData binding,
+ * and delegate setup.
+ *
+ * Set the `config` property with an entity name and optional initial columns.
+ *
  * @namespace b1.slick.Table.EntityTable
+ * @example
+ * <!-- XML view usage: -->
+ * <slick:EntityTable config="{ entity: 'BusinessPartners', initialColumns: ['CardCode', 'CardName'] }" />
  */
 export default class EntityTable extends Control {
     constructor(idOrSettings?: string | $EntityTableSettings);
@@ -27,6 +36,11 @@ export default class EntityTable extends Control {
 
     static readonly metadata: MetadataOptions = {
         properties: {
+            /**
+             * Table configuration object.
+             * - `entity` (required): registered entity name (e.g. `"BusinessPartners"`)
+             * - `initialColumns` (optional): property keys to show as columns on first load
+             */
             config: { type: "object" },
         },
         aggregations: {
