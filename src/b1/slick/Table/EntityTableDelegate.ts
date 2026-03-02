@@ -31,7 +31,7 @@ EntityTableDelegate.fetchProperties = async (table: Table) => {
     return properties;
 };
 
-const _createColumn = (id: string, propertyKey: string) => {
+export const createColumn = (id: string, propertyKey: string) => {
     return new Column(id, {
         propertyKey: propertyKey,
         header: propertyKey,
@@ -39,6 +39,7 @@ const _createColumn = (id: string, propertyKey: string) => {
             text: {
                 path: propertyKey,
                 model: Slick.getModelName(),
+                targetType: "any",
             },
         }),
     });
@@ -46,7 +47,7 @@ const _createColumn = (id: string, propertyKey: string) => {
 
 EntityTableDelegate.addItem = async (table: Table, propertyKey: string) => {
     const sId = `${table.getId()}-col-${propertyKey}`;
-    return await _createColumn(sId, propertyKey);
+    return createColumn(sId, propertyKey);
 };
 
 EntityTableDelegate.updateBindingInfo = function (table, oBindingInfo) {
