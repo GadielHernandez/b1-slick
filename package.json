@@ -19,24 +19,23 @@
     "types": "dist/resources/b1/slick/index.d.ts",
     "files": [
         "dist/resources/",
-        "src/b1/"
+        "src/b1/",
+        "ui5.yaml"
     ],
     "ui5": {
         "paths": {
-            "src": "src/"
+            "src": "dist/resources/"
         }
     },
     "publishConfig": {
         "access": "public"
     },
     "scripts": {
-        "build": "ui5 build",
+        "build": "ui5 build --config ui5-dev.yaml",
+        "prepublishOnly": "npm run build",
         "ts-typecheck": "tsc --noEmit",
         "ts-interface-generator": "npx @ui5/ts-interface-generator",
         "version": "node scripts/sync-version.js && git add src/b1/slick/.library"
-    },
-    "peerDependencies": {
-        "@sapui5/types": ">=1.120.0"
     },
     "devDependencies": {
         "@openui5/types": "1.120.27",
